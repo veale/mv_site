@@ -1,0 +1,39 @@
+<p>Minimo supports multiple authors for your site. Just make sure you have the following configuration in your site’s <strong><code class="highlighter-rouge">config.toml</code></strong>:</p>
+
+<div class="language-toml highlighter-rouge"><pre class="highlight"><code><span class="nn">[taxonomies]</span>
+<span class="py">author</span> <span class="p">=</span> <span class="s">"authors"</span>
+</code></pre>
+</div>
+
+<p>Minimo treats Authors as a <a href="https://gohugo.io/content-management/taxonomies/">Hugo Taxonomy</a>.</p>
+
+<h2 id="authors-profile">Author’s Profile</h2>
+
+<p>For adding an author to your site:</p>
+
+<ul>
+  <li>Create <strong><code class="highlighter-rouge">data/authors</code></strong> folder in your site’s root directory</li>
+  <li>Create a file with the filename format: <strong><code class="highlighter-rouge">&lt;username&gt;.toml</code></strong></li>
+</ul>
+
+<p>Now, add information about the author using the structure below:</p>
+
+<p><strong>/data/authors/muniftanjim.toml</strong></p>
+
+<p><em>You can use either the <code class="highlighter-rouge">[email]</code> fields or the <code class="highlighter-rouge">[social.email]</code> field. You don’t need to fill them both. However, it is encouraged to use <code class="highlighter-rouge">[email]</code> instead of <code class="highlighter-rouge">[social.email]</code>.</em></p>
+
+<h2 id="adding-authors-to-contents">Adding Authors to Contents</h2>
+
+<p>For adding authors to your content include the following option in your content’s front-matter:</p>
+
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>
+<span class="s">authors</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">muniftanjim"</span><span class="pi">]</span>
+<span class="nn">---</span>
+</code></pre>
+</div>
+
+<ul>
+  <li><code class="highlighter-rouge">authors</code> [<code class="highlighter-rouge">Array</code> of <code class="highlighter-rouge">String</code>s]: username of authors</li>
+</ul>
+
+<p>That’s all.</p>

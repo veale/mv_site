@@ -1,0 +1,32 @@
+<p>You can add cover image to your contents with the <strong><code class="highlighter-rouge">cover</code></strong> paramameter in the content’s front-matter.</p>
+
+<p>You can directly provide the image url:</p>
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>
+<span class="s">cover</span><span class="pi">:</span> <span class="s">/images/eden-farm-children-s-village.jpg</span>
+<span class="nn">---</span>
+</code></pre>
+</div>
+
+<ul>
+  <li><code class="highlighter-rouge">cover</code> [<code class="highlighter-rouge">String</code>]: path/url of the cover image</li>
+</ul>
+
+<p>Or you can provide additional information:</p>
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>
+<span class="s">cover</span><span class="pi">:</span>
+  <span class="s">image</span><span class="pi">:</span> <span class="s">/images/eden-farm-children-s-village.jpg</span>
+  <span class="s">caption</span><span class="pi">:</span> <span class="s">Eden Farm Children's Village by Gareth Harper on Unsplash</span>
+  <span class="s">style</span><span class="pi">:</span> <span class="s">full</span>
+<span class="nn">---</span>
+</code></pre>
+</div>
+
+<ul>
+  <li><code class="highlighter-rouge">cover</code> [<code class="highlighter-rouge">Map</code>]:
+    <ul>
+      <li><code class="highlighter-rouge">image</code>   [<code class="highlighter-rouge">String</code>]: path/url of the cover image</li>
+      <li><code class="highlighter-rouge">caption</code> [<code class="highlighter-rouge">String</code>]: caption for the cover image</li>
+      <li><code class="highlighter-rouge">style</code>   [<code class="highlighter-rouge">String</code>]: <code class="highlighter-rouge">full</code> / <code class="highlighter-rouge">wide</code> / <code class="highlighter-rouge">normal</code></li>
+    </ul>
+  </li>
+</ul>

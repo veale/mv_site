@@ -1,0 +1,140 @@
+<p>Minimo supports <em><strong>Widgets</strong></em> that you can place on specific <em><strong>Widget Areas</strong></em>.</p>
+
+<h2 id="available-widgets">Available Widgets</h2>
+
+<p>Minimo has the following built-in Widgets:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slug</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1. About</td>
+      <td><code class="highlighter-rouge">about</code></td>
+    </tr>
+    <tr>
+      <td>2. Recent Posts</td>
+      <td><code class="highlighter-rouge">recent_posts</code></td>
+    </tr>
+    <tr>
+      <td>3. Social Menu</td>
+      <td><code class="highlighter-rouge">social_menu</code></td>
+    </tr>
+    <tr>
+      <td>4. Taxonomy Cloud</td>
+      <td><code class="highlighter-rouge">taxonomy_cloud</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="widget-configuration-options">Widget Configuration Options</h3>
+
+<p>Here are the configuration options available for the Widgets:</p>
+
+<h4 id="widget-about">Widget: About</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">about</code> [<code class="highlighter-rouge">Map</code>]:
+    <ul>
+      <li><code class="highlighter-rouge">title</code> [<code class="highlighter-rouge">String</code>]: Title<br />
+ <em>default: <code class="highlighter-rouge">.Site.Title</code></em></li>
+      <li><code class="highlighter-rouge">description</code> [<code class="highlighter-rouge">String</code>]: Description<br />
+<em>default: <code class="highlighter-rouge">.Site.Params.info.description</code></em></li>
+      <li><code class="highlighter-rouge">logo</code> [<code class="highlighter-rouge">String</code>]: path/url of Logo<br />
+<em>default: <code class="highlighter-rouge">"/images/logo.png"</code></em></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="widget-recent-posts">Widget: Recent Posts</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">recent_posts</code> [<code class="highlighter-rouge">Map</code>]:
+    <ul>
+      <li><code class="highlighter-rouge">title</code> [<code class="highlighter-rouge">String</code>]: Title<br />
+<em>default: <code class="highlighter-rouge">"Recent Posts"</code></em></li>
+      <li><code class="highlighter-rouge">length</code> [<code class="highlighter-rouge">Integer</code>]: Number of posts to show<br />
+<em>default: <code class="highlighter-rouge">5</code></em></li>
+      <li><code class="highlighter-rouge">excludeTypes</code> [<code class="highlighter-rouge">Array</code> of <code class="highlighter-rouge">String</code>s]:  Types of posts to exclude<br />
+<em>default: <code class="highlighter-rouge">["page"]</code></em></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="widget-social-menu">Widget: Social Menu</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">social_menu</code> [<code class="highlighter-rouge">Map</code>]:
+    <ul>
+      <li><code class="highlighter-rouge">title</code> [<code class="highlighter-rouge">String</code>]: Title<br />
+<em>default: <code class="highlighter-rouge">""</code></em></li>
+      <li><code class="highlighter-rouge">platforms</code> [<code class="highlighter-rouge">Array</code> of <code class="highlighter-rouge">String</code>s]: Social platform to show</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="widget-taxonomy-cloud">Widget: Taxonomy Cloud</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">taxonomy_cloud</code> [<code class="highlighter-rouge">Map</code>]:
+    <ul>
+      <li><code class="highlighter-rouge">title</code> [<code class="highlighter-rouge">String</code>]: Title<br />
+<em>default: Plural Name for <code class="highlighter-rouge">taxonomyCloud.taxonomy</code></em></li>
+      <li><code class="highlighter-rouge">taxonomy</code> [<code class="highlighter-rouge">String</code>]: Taxonomy to show<br />
+<em>default: <code class="highlighter-rouge">.Site.Params.info.description</code></em></li>
+      <li><code class="highlighter-rouge">shuffle</code> [<code class="highlighter-rouge">Boolean</code>]: Shuffle Taxonomy Terms<br />
+<em>default: <code class="highlighter-rouge">true</code></em></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="available-widget-areas">Available Widget Areas</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slug</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Homepage</td>
+      <td><code class="highlighter-rouge">homepage</code></td>
+    </tr>
+    <tr>
+      <td>Sidebar</td>
+      <td><code class="highlighter-rouge">sidebar</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can add Widgets to Widget Areas from your <strong><code class="highlighter-rouge">config.toml</code></strong> file:</p>
+
+<div class="language-toml highlighter-rouge"><pre class="highlight"><code><span class="nn">[params.widgets]</span>
+<span class="py">homepage</span> <span class="p">=</span> <span class="nn">["recent_posts"]</span>
+<span class="py">sidebar</span> <span class="p">=</span> <span class="nn">["about","taxonomy_cloud"]</span>
+</code></pre>
+</div>
+
+<p>The syntax for adding Widgets to Widget Areas is:</p>
+
+<div class="language-toml highlighter-rouge"><pre class="highlight"><code><span class="py">widget_area_slug</span> <span class="p">=</span> <span class="p">[</span> <span class="err">widget_slug_</span><span class="mi">1</span><span class="p">,</span> <span class="err">widget_slug_</span><span class="mi">2</span><span class="p">,</span> <span class="err">...</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<h2 id="widgets-configuration-file">Widgets Configuration File</h2>
+
+<p>Minimo picks up Widgets’ configuration from the <strong><code class="highlighter-rouge">/data/config/widgets.toml</code></strong> file.</p>
+
+<p>Here’s the <em>Widgets Config file</em> for this site:</p>
+
+<p><strong><code class="highlighter-rouge">/data/config/widgets.toml</code></strong></p>
+
+<p>If configuration for any Widgets are missing in this file, Minimo will fallback to the default configuration for those Widgets.</p>
+
+<p>Go wild!</p>

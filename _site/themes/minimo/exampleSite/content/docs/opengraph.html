@@ -1,0 +1,57 @@
+<p>Minimo has built-in support for Opengraph tags. It will pick up most of the things from your contents’ front-matters &amp; Hugo configuration.</p>
+
+<p>You can use these options in you content’s front-matter:</p>
+
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>
+<span class="s">audios</span><span class="pi">:</span> <span class="pi">[]</span>  <span class="c1"># for og:audio tags</span>
+<span class="s">images</span><span class="pi">:</span> <span class="pi">[]</span>  <span class="c1"># for og:image tags</span>
+<span class="s">videos</span><span class="pi">:</span> <span class="pi">[]</span>  <span class="c1"># for og:video tags</span>
+<span class="nn">---</span>
+</code></pre>
+</div>
+
+<ul>
+  <li><code class="highlighter-rouge">audios</code> [<code class="highlighter-rouge">Array</code> of <code class="highlighter-rouge">String</code>s]: path/url of audio files</li>
+  <li><code class="highlighter-rouge">images</code> [<code class="highlighter-rouge">Array</code> of <code class="highlighter-rouge">String</code>s]: path/url of image files</li>
+  <li><code class="highlighter-rouge">videos</code> [<code class="highlighter-rouge">Array</code> of <code class="highlighter-rouge">String</code>s]: path/url of video files</li>
+</ul>
+
+<p><em>N.B.: the front-matter syntax shown here is <code class="highlighter-rouge">yaml</code>. If you use a different format (e.g. <code class="highlighter-rouge">toml</code>), the syntax will change accordingly.</em></p>
+
+<p>If you add <a href=""><strong>Cover Image</strong></a> to you content, it will also be picked up.</p>
+
+<h2 id="facebook-opengraph">Facebook Opengraph</h2>
+
+<p>You can set these options in your <code class="highlighter-rouge">config.toml</code> files for better integration with Facebook:</p>
+
+<div class="language-toml highlighter-rouge"><pre class="highlight"><code><span class="nn">[params.opengraph.facebook]</span>
+<span class="py">admins</span> <span class="p">=</span> <span class="p">[]</span>  <span class="c"># for fb:admins tags</span>
+<span class="py">appID</span>  <span class="p">=</span> <span class="s">""</span>  <span class="c"># for fb:app_id tag</span>
+<span class="py">pageID</span> <span class="p">=</span> <span class="s">""</span>  <span class="c"># for article:publisher tag</span>
+</code></pre>
+</div>
+
+<ul>
+  <li><code class="highlighter-rouge">admins</code> [<code class="highlighter-rouge">Array</code> of <code class="highlighter-rouge">String</code>s]: Facebook Profile IDs</li>
+  <li><code class="highlighter-rouge">appID</code> [<code class="highlighter-rouge">String</code>]: Facebook Application ID</li>
+  <li><code class="highlighter-rouge">pageid</code> [<code class="highlighter-rouge">String</code>]: Facebook Page ID</li>
+</ul>
+
+<p>Also, the <code class="highlighter-rouge">[social.facebook]</code> field from the <a href="/docs/authors/#author-s-profile">Author’s Profile</a> data is used for <code class="highlighter-rouge">article:author</code> tag.</p>
+
+<h2 id="twitter-cards">Twitter Cards</h2>
+
+<p>Minimo has built-in support for <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards">Twitter Cards</a>.</p>
+
+<p>You can set these options in your <code class="highlighter-rouge">config.toml</code> files to provide additional information for Twitter Cards:</p>
+
+<div class="language-toml highlighter-rouge"><pre class="highlight"><code><span class="nn">[params.opengraph.twitter]</span>
+<span class="py">page</span> <span class="p">=</span> <span class="s">""</span> <span class="c"># for twitter:site tag</span>
+</code></pre>
+</div>
+
+<ul>
+  <li><code class="highlighter-rouge">page</code> [<code class="highlighter-rouge">String</code>]: Twitter Page’s Username</li>
+</ul>
+
+<p>Also, the <code class="highlighter-rouge">[social.twitter]</code> field from the <a href="/docs/authors/#author-s-profile">Author’s Profile</a> data is used for <code class="highlighter-rouge">twitter:creator</code> tag.</p>

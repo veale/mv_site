@@ -1,0 +1,63 @@
+<p>First of all you will need to setup a Hugo site. You can follow the <a href="https://gohugo.io/getting-started/quick-start/">Hugo’s Quick Start Guide</a> for that.</p>
+
+<p>After you’re done with that, it’s time for installing Minimo!</p>
+
+<h2 id="installing-minimo">Installing Minimo</h2>
+
+<p>There are two different ways you can install Minimo:</p>
+
+<ol>
+  <li>As clone</li>
+  <li>As submodule</li>
+</ol>
+
+<p><em>The second method is recommended.</em></p>
+
+<h4 id="install-minimo-as-clone">Install Minimo as clone</h4>
+
+<p>With this method, you will simply clone it. And a copy of Minimo’s repository will be stored with the rest of you site. Enter the following command for cloning Minimo:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>git clone --depth 1 https://github.com/MunifTanjim/minimo themes/minimo
+</code></pre>
+</div>
+
+<h4 id="install-minimo-as-submodule">Install Minimo as submodule</h4>
+
+<p>This method doesn’t store a copy of Minimo’s repository inside your site’s repository. Rather it adds Minimo as a dependency. Start by this command:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>git submodule add https://github.com/MunifTanjim/minimo themes/minimo
+</code></pre>
+</div>
+
+<p>This will add Minimo’s repository as a submodule to your site’s repository. Now, you will have to pull the theme:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>git submodule init
+git submodule update
+</code></pre>
+</div>
+
+<p>That’s all, Minimo is ready to be used.</p>
+
+<h2 id="configuration-for-minimo">Configuration for Minimo</h2>
+
+<p>For getting started with Minimo, copy the <strong><code class="highlighter-rouge">config.toml</code></strong> file from the <strong><code class="highlighter-rouge">exampleSite</code></strong> directory inside Minimo’s repository to your site repository:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>cp themes/minimo/exampleSite/config.toml .
+</code></pre>
+</div>
+
+<p>You can take a look at the <a href=""><strong><code class="highlighter-rouge">config.toml</code></strong> file</a> of this site.</p>
+
+<p>Now, you can start editing this file and change the configuration!</p>
+
+<h3 id="setting-up-authors">Setting up Authors</h3>
+
+<p>Follow the <a href="">Authors Setup Guide</a> for setting up authors for you site.</p>
+
+<h3 id="setting-up-widgets">Setting up Widgets</h3>
+
+<p>If you want to use Widgets on your site, take a look at the <a href="">Widgets documentation</a></p>
+
+<hr />
+
+<p>Et voilà! Minimo is ready!</p>

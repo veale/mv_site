@@ -1,0 +1,118 @@
+<p>Minimo comes with several shortcodes built-in.</p>
+
+<hr />
+
+<h2 id="shortcode-center">Shortcode: center</h2>
+
+<p>Center align you content.</p>
+
+<h3 id="center-parameters">center: Parameters</h3>
+
+<ul>
+  <li>Markdown content between opening and closing tags.</li>
+</ul>
+
+<h3 id="center-usage-example">center: Usage Example</h3>
+<div class="language-golang highlighter-rouge"><pre class="highlight"><code><span class="x">
+</span><span class="n">_Center</span><span class="x"> </span><span class="n">Aligned</span><span class="x"> </span><span class="n">Text_</span><span class="x">
+
+</span></code></pre>
+</div>
+
+<p><strong>Output</strong></p>
+
+<p><em>Center Aligned Text</em></p>
+
+<hr />
+
+<h2 id="shortcode-convo">Shortcode: convo</h2>
+
+<p>Renders conversation blocks.</p>
+
+<h3 id="convo-parameters">convo: Parameters</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">sep</code>  [<code class="highlighter-rouge">String</code>] (optional): seperator between person and text (default: “<code class="highlighter-rouge">:</code>”)</li>
+</ul>
+
+<h3 id="convo-inner-syntax">convo: Inner Syntax</h3>
+
+<div class="language-golang highlighter-rouge"><pre class="highlight"><code><span class="n">person</span><span class="x"> </span><span class="o">::</span><span class="x"> </span><span class="n">text</span><span class="x">
+</span></code></pre>
+</div>
+
+<p><em>You can remove the <strong><code class="highlighter-rouge">person</code></strong> part, if you want.</em></p>
+
+<h3 id="convo-usage-example">convo: Usage Example</h3>
+
+<div class="language-golang highlighter-rouge"><pre class="highlight"><code><span class="x">
+
+</span><span class="n">Jerry</span><span class="x"> </span><span class="o">::</span><span class="x"> </span><span class="n">You</span><span class="x"> </span><span class="n">don</span><span class="err">'</span><span class="n">t</span><span class="x"> </span><span class="n">look</span><span class="x"> </span><span class="n">so</span><span class="x"> </span><span class="n">tough</span><span class="o">.</span><span class="x">
+
+</span><span class="n">Finch</span><span class="x"> </span><span class="o">::</span><span class="x"> </span><span class="n">It</span><span class="err">'</span><span class="n">s</span><span class="x"> </span><span class="n">because</span><span class="x"> </span><span class="n">I</span><span class="x"> </span><span class="n">have</span><span class="x"> </span><span class="n">only</span><span class="x"> </span><span class="n">two</span><span class="x"> </span><span class="n">modes</span><span class="p">,</span><span class="x"> </span><span class="n">Jerry</span><span class="o">.</span><span class="x"> </span><span class="n">Calm</span><span class="p">,</span><span class="x"> </span><span class="n">and</span><span class="x"> </span><span class="n">furious</span><span class="o">.</span><span class="x"> </span><span class="n">It</span><span class="err">'</span><span class="n">s</span><span class="x"> </span><span class="n">a</span><span class="x"> </span><span class="n">rare</span><span class="x"> </span><span class="n">person</span><span class="x"> </span><span class="n">that</span><span class="x"> </span><span class="n">sees</span><span class="x"> </span><span class="n">the</span><span class="x"> </span><span class="n">latter</span><span class="x"> </span><span class="n">and</span><span class="x"> </span><span class="n">lives</span><span class="x"> </span><span class="n">to</span><span class="x"> </span><span class="n">talk</span><span class="x"> </span><span class="n">about</span><span class="x"> </span><span class="n">it</span><span class="o">.</span><span class="x">
+
+
+</span></code></pre>
+</div>
+
+<p><strong>Output</strong></p>
+
+<p>Jerry :: You don’t look so tough.</p>
+
+<p>Finch :: It’s because I have only two modes, Jerry. Calm, and furious. It’s a rare person that sees the latter and lives to talk about it.</p>
+
+<hr />
+
+<h2 id="shortcode-file">Shortcode: file</h2>
+
+<p>Include content from seperate file with syntax highlighting.</p>
+
+<h3 id="file-parameters">file: Parameters</h3>
+
+<p>0 =&gt; filename [<code class="highlighter-rouge">String</code>] (required)<br />
+1 =&gt; filetype [<code class="highlighter-rouge">String</code>] (optional)</p>
+
+<h3 id="file-usage-example">file: Usage Example</h3>
+
+<div class="language-golang highlighter-rouge"><pre class="highlight"><code><span class="x">
+</span></code></pre>
+</div>
+
+<p><strong>Output</strong></p>
+
+<hr />
+
+<h2 id="shortcode-text">Shortcode: text</h2>
+
+<p>Text with custom size and color</p>
+
+<h3 id="text-parameters">text: Parameters</h3>
+
+<p>You can use either Named or Unnamed Parameters</p>
+
+<p><strong>Named Parameters</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">s</code> or <code class="highlighter-rouge">size</code>  [<code class="highlighter-rouge">String</code>] (optional): multiplier relative to the normal size</li>
+  <li><code class="highlighter-rouge">c</code> or <code class="highlighter-rouge">color</code> [<code class="highlighter-rouge">String</code>] (optional): name / hex / rgb / rgba</li>
+</ul>
+
+<p><strong>Unnamed Parameters</strong></p>
+
+<p>0 =&gt; textsize [<code class="highlighter-rouge">String</code>] (required): multiplier relative to the normal size<br />
+1 =&gt; textcolor [<code class="highlighter-rouge">String</code>] (optional): name / hex / rgb / rgba</p>
+
+<h3 id="text-usage-example">text: Usage Example</h3>
+
+<div class="language-golang highlighter-rouge"><pre class="highlight"><code><span class="x">
+</span><span class="n">font</span><span class="o">-</span><span class="n">size</span><span class="o">:</span><span class="x"> </span><span class="m">1.4</span><span class="n">em</span><span class="p">;</span><span class="x">
+</span><span class="n">color</span><span class="o">:</span><span class="x"> </span><span class="n">purple</span><span class="p">;</span><span class="x">
+
+</span></code></pre>
+</div>
+
+<p><strong>Output</strong></p>
+
+<p>font-size: 1.5em;<br />
+color: purple;</p>
+
